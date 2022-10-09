@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Note</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+    <div class="main">
+        <div class="title" id="title">
+            Recipe Name
+        </div>
+
+        <div class="content-1">
+            <div class="recipe" id="recipe">
+                <input type="text" class="recipename" id="recipename" placeholder="Enter your recipe name">
+                <button class="recipebtn" id="recipebtn" onclick="removeph(event)">Save</button>
+            </div>
+        </div>
+
+        <div class="content-2">
+            <div class="inc-table" id="inc-table">
+                <input type="text" class="inc-name" id="inc-name" placeholder="Enter your incredient">
+                <input type="text" class="inc-gram" id="inc-gram" placeholder="Enter your incredient weight or pieces">
+                <button class="inc-btn" id="inc-btn" >Save</button>
+            </div>
+        </div>
+
+        <div class="table">
+            <table>
+                <thead>
+                    <th>Incredients</th>
+                    <th>weight</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Onion</td>
+                        <td>500 grams</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <script src="/assets/main.js"></script>
+</body>
+</html>
