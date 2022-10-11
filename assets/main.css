@@ -9,6 +9,7 @@ margin: 0;
     color: white;
     font-size: 1.6rem;
     background-color: #1b63ff;
+    width: 100%;
 }
 .recipe,.inc-table{
     display: flex;
@@ -39,7 +40,7 @@ table{
 
 .table{
     border-collapse: collapse;
-    width: 95%;
+    width: 88%;
 }
 
 table th ,table  td{
