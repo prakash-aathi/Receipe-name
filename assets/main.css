@@ -36,3 +36,24 @@ table{
     border-spacing: 2rem;
     /* border: sol; */
 }
+
+.table{
+    border-collapse: collapse;
+    width: 95%;
+}
+
+table th ,table  td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table  th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+}
+
