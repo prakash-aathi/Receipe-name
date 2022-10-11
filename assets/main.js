@@ -21,6 +21,8 @@ incBtn.addEventListener('click',() => {
     row.append(data1,data2)
     console.log(row);
     table.append(row);
+    incGram.value="";
+    incName.value="";
 })
 
 function removeph(event){
