@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Note</title>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- j query library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <link rel="stylesheet" href="./assets/main.css">
 </head>
+
 <body>
     <div class="main">
         <div class="title" id="title">
             Recipe Name
+            <button> <a href="./feedback.html">Feedback</a> </button>
         </div>
 
+        <div id="alert-success" style="display: none;">
+            successfully added !
+        </div>
+        <div id="alert-danger" style="display: none;">
+            successfully removed !
+        </div>
         <div class="content-1">
             <div class="recipe" id="recipe">
                 <input type="text" class="recipename" id="recipename" placeholder="Enter your recipe name">
@@ -24,27 +39,36 @@
             <div class="inc-table" id="inc-table">
                 <input type="text" class="inc-name" id="inc-name" placeholder="Enter your incredient">
                 <input type="text" class="inc-gram" id="inc-gram" placeholder="Enter your incredient weight or pieces">
-                <button class="inc-btn" id="inc-btn" >Save</button>
+                <button class="inc-btn" id="inc-btn">Save</button>
             </div>
         </div>
 
-        <div >
-            <table class="table" id="table">
+        <div id="list">
+
+        </div>
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Incredients</th>
                     <th>weight</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>Onion</td>
-                    <td>500 grams</td>
+                    <td>500 grams <button onclick="closeBtn(event)" id="abc"><i class="fa-solid fa-xmark"></i></button>
+                    </td>
                 </tr>
-            </table>
-
-        </div>
+                <tr>
+                    <td>chicken</td>
+                    <td>5 kg <button onclick="closeBtn(event)"><i class="fa-solid fa-xmark"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 
-
-     <script src="./assets/main.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
+
 </html>

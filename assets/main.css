@@ -1,17 +1,36 @@
-*{
-padding: 0;
-margin: 0;
+* {
+    padding: 0;
+    margin: 0;
 }
-.title{
+
+.title {
+    display: flex;
     text-align: center;
     padding: 1rem;
-    border: 1px solid ;
+    border: 1px solid;
     color: white;
     font-size: 1.6rem;
     background-color: #1b63ff;
-    width: 100%;
+    /* width: 100%; */
+    justify-content: space-evenly;
 }
-.recipe,.inc-table{
+
+.title>button {
+    padding: 8px;
+    border: 0.6px solid blue;
+    border-radius: 6px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.recipe,
+.inc-table,
+#list {
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -19,11 +38,39 @@ margin: 0;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgb(231, 231, 231);
 }
-.content-1,.content-2,.table{
-    margin: 2rem;
+
+.content-1,
+.content-2,
+.table,
+#alert-success,
+#alert-danger,
+#list {
+    margin: 1rem;
 }
 
-.recipename,.inc-name,.inc-gram{
+#list {
+    color: grey;
+}
+
+#alert-success {
+    background-color: #04AA6D;
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+}
+
+#alert-danger {
+    background-color: rgb(225, 43, 43);
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+}
+
+.recipename,
+.inc-name,
+.inc-gram {
     padding: 5px 10px;
     outline: none;
     width: 100%;
@@ -33,23 +80,24 @@ margin: 0;
     border-radius: 5px;
 }
 
-table{
+table {
     border-spacing: 2rem;
     /* border: sol; */
 }
 
-.table{
+.table {
     border-collapse: collapse;
     width: 88%;
 }
 
-table th ,table  td{
+table th,
+table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
-table  th{
+table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -58,3 +106,55 @@ table  th{
     text-align: center;
 }
 
+/* close btn */
+tr>td>button {
+    float: right;
+    padding: 2px 5px;
+}
+
+tr>td>button:hover {
+    color: white;
+    background-color: red;
+}
+
+/* end */
+
+/* feedback form start */
+
+form {
+    padding: 1rem;
+    background-color: rgb(235, 223, 223);
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 23%;
+    margin: 2rem 0 0 4rem;
+}
+
+input,
+textarea {
+    padding: 5px 10px;
+    /* font-size: 1rem; */
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 5px 10px;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.radio>label {
+    padding: 0 0.4rem;
+}
+
+form>div {
+    margin: 5px;
+    width: 100%;
+    padding: 0.8rem 0;
+}
+
+/* fb form end */

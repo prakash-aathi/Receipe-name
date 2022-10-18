@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Note</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+    <div class="title" id="title">
+        Recipe Name
+        <button> <a href="./index.html">Home</a> </button>
+    </div>
+
+    <div class="main">
+        
+        <form action="" name="feedback">
+            <h2>Feedback Form</h2>
+            <div>
+                <input type="text" name="fullname" placeholder="Enter Your Name"> <br>
+            </div>
+
+            <div class="radio" id="radio">
+            <input type="radio" name="type" id="Generalfeedback" > 
+            <label for="Generalfeedback" >General Feedback</label>
+            <input type="radio" name="type" id="bug">
+            <label for="bug" >bug Feedback</label>
+            <input type="radio" name="type" id="con">
+            <label for="con" >Contribute</label>  <br>
+            </div>
+
+            <div>
+                <input type="mail" name="mail" placeholder="briyani@gmail.com"> <br>
+            </div>
+
+            <div>
+                <textarea name="fb" id="fb" placeholder="enter your feedback" rows="6" cols="25"></textarea> <br>
+            </div>
+
+            <div>
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Accept terms and conditions</label> <br></div>
+
+            <div>
+                <button class="btn">submit</button>
+            </div>
+        </form>
+    </div>
+
+     
+
+     <script src="feedback.js"></script>
+</body>
+</html>
