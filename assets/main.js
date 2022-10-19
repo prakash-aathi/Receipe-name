@@ -5,17 +5,25 @@ let recipe = document.getElementById("recipe")
 let incBtn = document.getElementById("inc-btn");
 let incName = document.getElementById("inc-name")
 let incGram = document.getElementById("inc-gram")
-let table = document.querySelector("tbody");
+let table = document.getElementById("table-body");
+let wholeTableEl = document.getElementById("table");
+
+let createbody = document.createElement("tbody");
 let list = document.getElementById("list");
 
 // change constantly
 recipebtn.addEventListener("click", () => {
     // console.log(recipeName.value)
-    title.innerText = recipeName.value.toUpperCase() + " INCREDIENTS";
+    const newtitle = recipeName.value.toUpperCase() + " INCREDIENTS";
+    title.innerText = newtitle;
     const btn = document.createElement("button")
     btn.innerHTML = "<a href='./feedback.html'>Feedback</a>";
     title.append(btn);
+
+    // persistance change for recipe name
+    localStorage.setItem(localStorageRecipeName, JSON.stringify([...JSON.parse(localStorage.getItem(localStorageRecipeName) || "[]"), { name: newtitle }]))
 });
+
 
 // live changes
 recipeName.addEventListener("input", (e) => {
@@ -55,6 +63,11 @@ incBtn.addEventListener('click', () => {
     data2.innerHTML += "<button onclick='closeBtn(event)'><i class='fa-solid fa-xmark'></i></button>";
     row.append(data1, data2)
     // console.log(row);
+    // if (table) {
+    //     createbody.setAttribute("id", "table-body")
+    //     wholeTableEl.append(createbody);
+    //     // console.log("created tbody");
+    // }
     table.append(row);
     incGram.value = "";
     incName.value = "";
@@ -62,6 +75,7 @@ incBtn.addEventListener('click', () => {
     sucessalert();
 })
 
+// press enter key submit the values for table
 incGram.addEventListener('keypress', (event) => {
     if (event.key == 'Enter') {
         event.preventDefault();
@@ -70,15 +84,17 @@ incGram.addEventListener('keypress', (event) => {
 })
 
 function removeph(event) {
+
     // let recipe = document.getElementById("recipe")
-    let recipes = event.target.parentNode.parentNode;
+    let recipes = event.target.parentNode;
     recipes.remove();
+    count();
     // console.log(recipes);
 }
 
 function closeBtn(event) {
     let removeRow = event.target.parentNode.parentNode.parentNode;
-    // console.log(removeRow);
+    console.log(removeRow);
     removeRow.remove();
     count();
     dangeralert();
@@ -97,3 +113,21 @@ function count() {
         list.append(h3El);
     }
 }
+
+
+// data persistance
+const localStorageRecipeName = "recipeName";
+// fetch recipe name
+
+let abc = localStorage.getItem(localStorageRecipeName)
+
+document.addEventListener("DOMContentLoaded", () => {
+    let lengthofstorage = (JSON.parse(abc).length) - 1;
+    if (abc != undefined) {
+        title.innerText = (JSON.parse(abc))[lengthofstorage].name;
+        const btn = document.createElement("button")
+        btn.innerHTML = "<a href='./feedback.html'>Feedback</a>";
+        title.append(btn);
+    }
+
+})
